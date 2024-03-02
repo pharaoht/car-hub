@@ -5,8 +5,9 @@ import { fetchCars } from "@/utils";
 import CarCard from "@/components/CarCard";
 import { fuels, yearsOfProduction } from "@/constants";
 import ShowMore from "@/components/ShowMore";
+import { SearchParamsProps } from "@/types";
 
-export default  async function Home({ searchParams }) {
+export default  async function Home({ searchParams } : SearchParamsProps ) {
 
   const allCars = await fetchCars({
     manufacturer: searchParams.manufacturer || '',
